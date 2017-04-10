@@ -1,0 +1,19 @@
+extends ../layout/main.pug
+
+include ../blocks/header/header.pug
+include ../blocks/navbar/navbar.pug
+include ../blocks/menu/menu.pug
+include ../blocks/favorites/favorites.pug
+include ../blocks/gallery/gallery.pug
+include ../blocks/footer/footer.pug
+
+block title
+	title Главная страница
+
+block pageContent
+	+navbar()
+	+header()
+	+menu()
+	+favorites()
+	+gallery()
+	+footer()

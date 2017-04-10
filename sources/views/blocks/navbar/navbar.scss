@@ -1,0 +1,33 @@
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	align-items:center;
+	// width:73.33%;
+	max-width:1100px;
+	margin:0 auto;
+	padding:40px 0;
+}
+
+.logo {
+	@include sprite($logo);
+	display: flex;
+}
+
+.main-menu {
+	display: flex;
+	align-items:center;
+	flex-wrap:wrap;
+	justify-content: center;
+	
+	&__link {
+		@include font("aleo", normal, 0.875em, #3b3b3b, linespace(40, 14));
+		letter-spacing: letspace(70,14);
+		margin-left:47px;
+	}
+}
+
+@media screen and (max-width:1200px) {
+	.navbar {
+		padding:40px;
+	}
+}
