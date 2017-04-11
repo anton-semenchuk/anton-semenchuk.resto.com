@@ -1,0 +1,15 @@
+@mixin font($ff:Arial, $weight:normal, $size:34px, $color:#3b3b3b, $height:0) {
+	font-family: $ff, sans-serif;
+	font-weight:$weight;
+	font-size:$size;
+	color:$color;
+	line-height: $height;
+}
+
+@function letspace ($photoshop-ls, $font-size) {
+	@return ($photoshop-ls * $font-size)/1000 + px;
+}
+
+@function linespace ($leading, $font-size) {
+	@return ($leading/2) + $font-size + px;
+}

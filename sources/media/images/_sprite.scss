@@ -1,0 +1,156 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$favorites-stars-3-name: 'favorites-stars-3';
+$favorites-stars-3-x: 0px;
+$favorites-stars-3-y: 135px;
+$favorites-stars-3-offset-x: 0px;
+$favorites-stars-3-offset-y: -135px;
+$favorites-stars-3-width: 80px;
+$favorites-stars-3-height: 12px;
+$favorites-stars-3-total-width: 235px;
+$favorites-stars-3-total-height: 147px;
+$favorites-stars-3-image: '../images/sprite.png';
+$favorites-stars-3: (0px, 135px, 0px, -135px, 80px, 12px, 235px, 147px, '../images/sprite.png', 'favorites-stars-3', );
+$favorites-stars-4-name: 'favorites-stars-4';
+$favorites-stars-4-x: 155px;
+$favorites-stars-4-y: 0px;
+$favorites-stars-4-offset-x: -155px;
+$favorites-stars-4-offset-y: 0px;
+$favorites-stars-4-width: 80px;
+$favorites-stars-4-height: 12px;
+$favorites-stars-4-total-width: 235px;
+$favorites-stars-4-total-height: 147px;
+$favorites-stars-4-image: '../images/sprite.png';
+$favorites-stars-4: (155px, 0px, -155px, 0px, 80px, 12px, 235px, 147px, '../images/sprite.png', 'favorites-stars-4', );
+$favorites-stars-5-name: 'favorites-stars-5';
+$favorites-stars-5-x: 155px;
+$favorites-stars-5-y: 12px;
+$favorites-stars-5-offset-x: -155px;
+$favorites-stars-5-offset-y: -12px;
+$favorites-stars-5-width: 80px;
+$favorites-stars-5-height: 12px;
+$favorites-stars-5-total-width: 235px;
+$favorites-stars-5-total-height: 147px;
+$favorites-stars-5-image: '../images/sprite.png';
+$favorites-stars-5: (155px, 12px, -155px, -12px, 80px, 12px, 235px, 147px, '../images/sprite.png', 'favorites-stars-5', );
+$logo-white-name: 'logo-white';
+$logo-white-x: 0px;
+$logo-white-y: 75px;
+$logo-white-offset-x: 0px;
+$logo-white-offset-y: -75px;
+$logo-white-width: 81px;
+$logo-white-height: 30px;
+$logo-white-total-width: 235px;
+$logo-white-total-height: 147px;
+$logo-white-image: '../images/sprite.png';
+$logo-white: (0px, 75px, 0px, -75px, 81px, 30px, 235px, 147px, '../images/sprite.png', 'logo-white', );
+$logo-name: 'logo';
+$logo-x: 0px;
+$logo-y: 105px;
+$logo-offset-x: 0px;
+$logo-offset-y: -105px;
+$logo-width: 81px;
+$logo-height: 30px;
+$logo-total-width: 235px;
+$logo-total-height: 147px;
+$logo-image: '../images/sprite.png';
+$logo: (0px, 105px, 0px, -105px, 81px, 30px, 235px, 147px, '../images/sprite.png', 'logo', );
+$menu-button-arrow-name: 'menu-button-arrow';
+$menu-button-arrow-x: 155px;
+$menu-button-arrow-y: 24px;
+$menu-button-arrow-offset-x: -155px;
+$menu-button-arrow-offset-y: -24px;
+$menu-button-arrow-width: 11px;
+$menu-button-arrow-height: 7px;
+$menu-button-arrow-total-width: 235px;
+$menu-button-arrow-total-height: 147px;
+$menu-button-arrow-image: '../images/sprite.png';
+$menu-button-arrow: (155px, 24px, -155px, -24px, 11px, 7px, 235px, 147px, '../images/sprite.png', 'menu-button-arrow', );
+$menu-title-bg-name: 'menu-title-bg';
+$menu-title-bg-x: 0px;
+$menu-title-bg-y: 0px;
+$menu-title-bg-offset-x: 0px;
+$menu-title-bg-offset-y: 0px;
+$menu-title-bg-width: 155px;
+$menu-title-bg-height: 75px;
+$menu-title-bg-total-width: 235px;
+$menu-title-bg-total-height: 147px;
+$menu-title-bg-image: '../images/sprite.png';
+$menu-title-bg: (0px, 0px, 0px, 0px, 155px, 75px, 235px, 147px, '../images/sprite.png', 'menu-title-bg', );
+$spritesheet-width: 235px;
+$spritesheet-height: 147px;
+$spritesheet-image: '../images/sprite.png';
+$spritesheet-sprites: ($favorites-stars-3, $favorites-stars-4, $favorites-stars-5, $logo-white, $logo, $menu-button-arrow, $menu-title-bg, );
+$spritesheet: (235px, 147px, '../images/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
